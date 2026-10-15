@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img">
+  <rect width="200" height="200" fill="#09090b"/>
+  <path d="M10 26 V10 H26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M174 10 H190 V26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M10 174 V190 H26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M174 190 H190 V174" stroke="#3f3f46" stroke-width="1.5" fill="none"/>
+  <text x="188" y="26" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="8" letter-spacing="1.5" fill="#22d3ee">3200MHZ</text>
+  <rect x="30" y="84" width="140" height="32" rx="3" fill="#18181b" stroke="#71717a" stroke-width="2.5"/>
+  <line x1="44" y1="88" x2="44" y2="112" stroke="#3f3f46" stroke-width="1.5"/><line x1="58" y1="88" x2="58" y2="112" stroke="#3f3f46" stroke-width="1.5"/><line x1="72" y1="88" x2="72" y2="112" stroke="#3f3f46" stroke-width="1.5"/><line x1="86" y1="88" x2="86" y2="112" stroke="#3f3f46" stroke-width="1.5"/><line x1="100" y1="88" x2="100" y2="112" stroke="#3f3f46" stroke-width="1.5"/><line x1="114" y1="88" x2="114" y2="112" stroke="#3f3f46" stroke-width="1.5"/><line x1="128" y1="88" x2="128" y2="112" stroke="#3f3f46" stroke-width="1.5"/><line x1="142" y1="88" x2="142" y2="112" stroke="#3f3f46" stroke-width="1.5"/><line x1="156" y1="88" x2="156" y2="112" stroke="#3f3f46" stroke-width="1.5"/>
+  <g stroke="#71717a" stroke-width="1.4">
+    <line x1="34" y1="120" x2="86" y2="120"/><line x1="94" y1="120" x2="166" y2="120"/>
+  </g>
+  <line x1="88" y1="116" x2="88" y2="124" stroke="#22d3ee" stroke-width="2"/>
+  <line x1="34" y1="126" x2="166" y2="126" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="3 3" stroke-opacity="0.55"/>
+  <text x="100" y="182" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" letter-spacing="2" fill="#52525b">DDR4 · 2X8GB</text>
+</svg>

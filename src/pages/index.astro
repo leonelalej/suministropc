@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SearchBar from '../components/SearchBar';
+import CategoryBar from '../components/CategoryBar';
+import ProductGrid from '../components/ProductGrid';
+import CartDock from '../components/CartDock';
+import CartDrawer from '../components/CartDrawer';
+import { ArrowRight, Headset, MessageCircle, Store, Truck } from 'lucide-react';
+import { CATEGORIES, PRODUCTS, STORE, USD_TO_VES } from '../data/products';
+import { fmtBs } from '../lib/format';
+
+const year = new Date().getFullYear();
+const productCount = PRODUCTS.length;
+const categoryCount = CATEGORIES.length - 1;
+
+const whatsappUrl = `https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent(
+  `Hola ${STORE.name}, saludos. Quisiera asesoría para elegir componentes para mi PC.`,
+)}`;
+
+const highlights = [
+  {
+    icon: MessageCircle,
+    title: 'Cotización al instante',
+    copy: 'Arma el pedido y envíalo en un toque.',
+  },
+  {
+    icon: Truck,
+    title: `Envíos en ${STORE.location}`,
+    copy: 'Entrega coordinada por WhatsApp.',
+  },
+  {
+    icon: Store,
+    title: 'Retiro disponible',
+    copy: 'Acuerda punto y horario al confirmar.',
+  },
+  {
+    icon: Headset,
+    title: 'Asesoría técnica',
+    copy: 'Te ayudamos a elegir lo compatible.',
+  },
+];
+---
+
+<Layout>
+  <div class="flex min-h-[100dvh] flex-col">
+    <!-- Sticky context block: identity + search + category rail -->
+    <header class="sticky top-0 z-30 border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md">
+      <div class="mx-auto w-full max-w-5xl px-3">
+        <div class="flex items-center gap-3 pb-2 pt-3">
+          <a href="/" class="shrink-0" aria-label={`${STORE.name} — inicio`}>
+            <img
+              src="/logo.png"
+              alt={`${STORE.name} — logotipo`}
+              width="40"
+              height="40"
+              loading="eager"
+              class="h-10 w-10 rounded-full border border-zinc-800 object-cover ring-1 ring-white/5"
+            />
+          </a>
+          <div class="min-w-0 flex-1">
+            <p class="truncate text-[15px] font-bold leading-tight tracking-tight text-zinc-50">
+              {STORE.name}
+            </p>
+            <p class="mt-0.5 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-zinc-400">
+              <span class="relative flex h-1.5 w-1.5 shrink-0">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60"></span>
+                <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent"></span>
+              </span>
+              <span class="truncate">{STORE.tagline} • {STORE.location}</span>
+            </p>
+          </div>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Escribir por WhatsApp"
+            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900/60 text-zinc-300 transition-all duration-150 ease-tactile hover:border-accent/50 hover:text-accent active:scale-95"
+          >
+            <MessageCircle className="h-[18px] w-[18px]" aria-hidden="true" />
+          </a>
+        </div>
+
+        <SearchBar client:load />
+        <CategoryBar client:load />
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <!-- Hero -->
+      <section class="relative overflow-hidden border-b border-zinc-800/60">
+        <div class="hero-grid pointer-events-none absolute inset-0" aria-hidden="true"></div>
+        <div class="accent-glow pointer-events-none absolute inset-0" aria-hidden="true"></div>
+
+        <div class="relative mx-auto w-full max-w-5xl px-3 pb-9 pt-9 sm:pb-12 sm:pt-12">
+          <p class="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">
+            {STORE.tagline} • {STORE.location}
+          </p>
+
+          <h1 class="mt-3 max-w-2xl text-balance text-[27px] font-bold leading-[1.14] tracking-tight text-zinc-50 sm:text-[35px]">
+            Hardware y suministros,{' '}
+            <span class="bg-gradient-to-r from-accent-soft to-accent bg-clip-text text-transparent">
+              listos para cotizar.
+            </span>
+          </h1>
+
+          <p class="mt-3.5 max-w-xl text-pretty text-[13.5px] leading-relaxed text-zinc-400 sm:text-sm">
+            Catálogo de componentes y consumibles para tu PC en {STORE.location}.
+            Arma tu pedido y confírmalo por WhatsApp — {STORE.delivery.toLowerCase()}.
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center gap-2.5">
+            <a
+              href="#catalogo"
+              class="flex h-11 items-center gap-2 rounded-xl bg-zinc-100 px-5 text-[13px] font-semibold text-zinc-950 transition-all duration-150 ease-tactile hover:bg-white active:scale-95"
+            >
+              Ver catálogo
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex h-11 items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/60 px-5 text-[13px] font-medium text-zinc-200 transition-all duration-150 ease-tactile hover:border-zinc-700 hover:text-zinc-50 active:scale-95"
+            >
+              <MessageCircle className="h-4 w-4 text-accent" aria-hidden="true" />
+              Escribir por WhatsApp
+            </a>
+          </div>
+
+          <!-- Spec strip (live catalog data, not marketing filler) -->
+          <dl class="mt-8 grid grid-cols-3 divide-x divide-zinc-800/70 border-y border-zinc-800/70">
+            <div class="py-3 pr-3">
+              <dt class="font-mono text-[9.5px] uppercase tracking-[0.18em] text-zinc-500">Productos</dt>
+              <dd class="tnum mt-1 text-[15px] font-semibold text-zinc-100">{productCount}</dd>
+            </div>
+            <div class="px-3 py-3 sm:px-5">
+              <dt class="font-mono text-[9.5px] uppercase tracking-[0.18em] text-zinc-500">Categorías</dt>
+              <dd class="tnum mt-1 text-[15px] font-semibold text-zinc-100">{categoryCount}</dd>
+            </div>
+            <div class="py-3 pl-3 sm:pl-5">
+              <dt class="font-mono text-[9.5px] uppercase tracking-[0.18em] text-zinc-500">Tasa Bs./USD</dt>
+              <dd class="tnum mt-1 text-[15px] font-semibold text-zinc-100">{fmtBs(USD_TO_VES)}</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Service highlights -->
+      <section aria-label="Servicios de la tienda" class="mx-auto w-full max-w-5xl px-3 pt-7">
+        <div class="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            highlights.map(({ icon: Icon, title, copy }) => (
+              <div class="flex items-start gap-2.5 rounded-xl border border-zinc-800/70 bg-zinc-900/40 p-3">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-950 text-accent">
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                </span>
+                <div class="min-w-0">
+                  <p class="text-[12px] font-semibold text-zinc-200">{title}</p>
+                  <p class="mt-0.5 text-[11px] leading-snug text-zinc-500">{copy}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- Catalog -->
+      <section id="catalogo" class="mx-auto w-full max-w-5xl scroll-mt-[170px] px-3 pb-32 pt-9">
+        <div class="mb-4">
+          <p class="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">Catálogo</p>
+          <h2 class="mt-1.5 text-lg font-bold tracking-tight text-zinc-50 sm:text-xl">
+            Equipos, componentes y consumibles
+          </h2>
+        </div>
+
+        <ProductGrid client:load />
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800/60">
+      <div class="mx-auto w-full max-w-5xl px-3 pb-28 pt-7">
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex items-center gap-3">
+            <img
+              src="/logo.png"
+              alt=""
+              width="36"
+              height="36"
+              loading="lazy"
+              class="h-9 w-9 rounded-full border border-zinc-800 object-cover"
+            />
+            <div>
+              <p class="text-[13px] font-bold tracking-tight text-zinc-100">{STORE.name}</p>
+              <p class="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+                {STORE.tagline} • {STORE.location}
+              </p>
+            </div>
+          </div>
+
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex h-11 items-center gap-2 self-start rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 font-mono text-[11.5px] text-zinc-300 transition-all duration-150 ease-tactile hover:border-accent/50 hover:text-accent active:scale-95 sm:self-auto"
+          >
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            {STORE.handle}
+          </a>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-1.5 border-t border-zinc-800/60 pt-4 sm:flex-row sm:items-center sm:justify-between">
+          <p class="font-mono text-[10px] tracking-wide text-zinc-600">
+            © {year} {STORE.name} — {STORE.location}, Venezuela
+          </p>
+          <p class="font-mono text-[10px] tracking-wide text-zinc-600">
+            Precios referenciales en USD • Tasa {fmtBs(USD_TO_VES)}
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Order dock + slide-up drawer -->
+    <CartDock client:load />
+    <CartDrawer client:load />
+  </div>
+</Layout>

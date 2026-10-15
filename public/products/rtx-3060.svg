@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img">
+  <rect width="200" height="200" fill="#09090b"/>
+  <path d="M10 26 V10 H26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M174 10 H190 V26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M10 174 V190 H26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M174 190 H190 V174" stroke="#3f3f46" stroke-width="1.5" fill="none"/>
+  <text x="188" y="26" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="8" letter-spacing="1.5" fill="#22d3ee">12GB</text>
+  <rect x="24" y="72" width="134" height="64" rx="8" fill="#18181b" stroke="#71717a" stroke-width="2.5"/>
+  <rect x="16" y="78" width="8" height="52" rx="2" fill="none" stroke="#71717a" stroke-width="2"/>
+  <line x1="16" y1="92" x2="24" y2="92" stroke="#71717a" stroke-width="1.5"/>
+  <line x1="16" y1="116" x2="24" y2="116" stroke="#71717a" stroke-width="1.5"/>
+  <g stroke="#71717a" stroke-width="2" fill="none">
+      <circle cx="60" cy="104" r="21"/>
+      <circle cx="60" cy="104" r="7"/>
+      <path d="M60 83 A21 21 0 0 1 78 93"/>
+      <path d="M42 115 A21 21 0 0 1 60 125"/>
+      <path d="M78 115 L67 109"/>
+      <path d="M42 93 L53 99"/>
+    </g>
+  <g stroke="#71717a" stroke-width="2" fill="none">
+      <circle cx="116" cy="104" r="21"/>
+      <circle cx="116" cy="104" r="7"/>
+      <path d="M116 83 A21 21 0 0 1 134 93"/>
+      <path d="M98 115 A21 21 0 0 1 116 125"/>
+      <path d="M134 115 L123 109"/>
+      <path d="M98 93 L109 99"/>
+    </g>
+  <rect x="70" y="62" width="34" height="10" rx="2" fill="none" stroke="#22d3ee" stroke-width="1.8"/>
+  <rect x="58" y="136" width="66" height="9" rx="1.5" fill="none" stroke="#71717a" stroke-width="1.8"/>
+  <text x="100" y="182" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" letter-spacing="2" fill="#52525b">RTX 3060 · GDDR6</text>
+</svg>

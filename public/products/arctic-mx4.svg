@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img">
+  <rect width="200" height="200" fill="#09090b"/>
+  <path d="M10 26 V10 H26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M174 10 H190 V26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M10 174 V190 H26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M174 190 H190 V174" stroke="#3f3f46" stroke-width="1.5" fill="none"/>
+  <text x="188" y="26" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="8" letter-spacing="1.5" fill="#22d3ee">4G</text>
+  <rect x="86" y="38" width="28" height="7" rx="2" fill="none" stroke="#71717a" stroke-width="2.2"/>
+  <rect x="95" y="45" width="10" height="24" fill="none" stroke="#71717a" stroke-width="2.2"/>
+  <rect x="82" y="69" width="36" height="66" rx="4" fill="#18181b" stroke="#71717a" stroke-width="2.5"/>
+  <rect x="86" y="90" width="28" height="41" rx="2" fill="#22d3ee" fill-opacity="0.16"/>
+  <line x1="86" y1="90" x2="114" y2="90" stroke="#22d3ee" stroke-width="2"/>
+  <g stroke="#3f3f46" stroke-width="1.3">
+    <line x1="78" y1="80" x2="84" y2="80"/><line x1="78" y1="95" x2="84" y2="95"/><line x1="78" y1="110" x2="84" y2="110"/>
+  </g>
+  <path d="M90 135 L110 135 L100 151 Z" fill="#18181b" stroke="#71717a" stroke-width="2.2"/>
+  <rect x="96" y="151" width="8" height="9" rx="1.5" fill="none" stroke="#71717a" stroke-width="2"/>
+  <text x="100" y="182" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" letter-spacing="2" fill="#52525b">ARCTIC MX-4</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img">
+  <rect width="200" height="200" fill="#09090b"/>
+  <path d="M10 26 V10 H26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M174 10 H190 V26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M10 174 V190 H26" stroke="#3f3f46" stroke-width="1.5" fill="none"/><path d="M174 190 H190 V174" stroke="#3f3f46" stroke-width="1.5" fill="none"/>
+  <text x="188" y="26" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="8" letter-spacing="1.5" fill="#22d3ee">165HZ</text>
+  <rect x="34" y="50" width="132" height="80" rx="5" fill="#18181b" stroke="#71717a" stroke-width="2.5"/>
+  <rect x="41" y="57" width="118" height="60" rx="2" fill="#09090b" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="41" y1="87" x2="159" y2="87" stroke="#22d3ee" stroke-width="1.2" stroke-opacity="0.5"/>
+  <line x1="41" y1="102" x2="130" y2="102" stroke="#3f3f46" stroke-width="1.2"/>
+  <line x1="41" y1="110" x2="112" y2="110" stroke="#3f3f46" stroke-width="1.2"/>
+  <rect x="93" y="130" width="14" height="15" fill="#18181b" stroke="#71717a" stroke-width="2.5"/>
+  <rect x="70" y="145" width="60" height="8" rx="4" fill="#18181b" stroke="#71717a" stroke-width="2.5"/>
+  <text x="100" y="182" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" letter-spacing="2" fill="#52525b">24" · IPS · 1MS</text>
+</svg>

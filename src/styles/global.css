@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* Load the project JS config (accent color, font stacks) — Tailwind v4 legacy-config bridge */
+@config "../../tailwind.config.mjs";
+
+/* ------------------------------------------------------------------ */
+/*  Mi PC Suministro — global foundation                               */
+/*  Monochrome zinc system · single cyan accent · technical utilitarian */
+/* ------------------------------------------------------------------ */
+
+html {
+  background-color: var(--color-zinc-950);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+body {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+/* Prices and counters align in columns while counting */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hide scrollbars on horizontal chip rails / drawer lists (touch scroll stays native) */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Thin styled scrollbar for the order drawer list */
+@utility drawer-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-zinc-700) transparent;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-zinc-700);
+    border-radius: 9999px;
+  }
+}
+
+/* Blueprint hairline grid for the hero backdrop, faded out with a radial mask */
+@utility hero-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--color-zinc-800) 45%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-zinc-800) 45%, transparent) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(120% 85% at 50% 0%, black 25%, transparent 78%);
+  mask-image: radial-gradient(120% 85% at 50% 0%, black 25%, transparent 78%);
+}
+
+/* Soft cyan wash scoped to the hero so the accent reads as brand, not decoration */
+@utility accent-glow {
+  background:
+    radial-gradient(42rem 18rem at 10% -10%, color-mix(in oklab, var(--color-accent) 13%, transparent), transparent 70%),
+    radial-gradient(30rem 14rem at 92% -5%, color-mix(in oklab, var(--color-accent-dim) 26%, transparent), transparent 75%);
+}
+
+/* Blueprint-style hairline grid used behind empty states */
+@utility blueprint-bg {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--color-zinc-800) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-zinc-800) 55%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
