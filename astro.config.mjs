@@ -8,7 +8,10 @@ export default defineConfig({
   // Static site generator: every route is pre-rendered HTML, hydrated
   // selectively by React islands (SearchBar, CategoryBar, ProductGrid, Cart).
   output: 'static',
-  site: 'https://mipcsuministro.example.com',
+  // GitHub Pages project site: https://leonelalej.github.io/suministropc/
+  // (use site + base = '/' when moving to a custom domain)
+  site: 'https://leonelalej.github.io',
+  base: '/suministropc',
 
   integrations: [
     react(),

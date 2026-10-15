@@ -3,6 +3,7 @@
  * Structured catalog data for Mi PC Suministro.
  * Strongly typed so the grid, cart and WhatsApp builder can never drift.
  */
+import { assetPath } from '../lib/assets';
 
 /** Fixed category taxonomy — drives the quick-filter chips. */
 export const CATEGORIES = [
@@ -58,7 +59,7 @@ export const PRODUCTS: Product[] = [
     brand: 'AMD',
     specs: 'AM4 • 6C/12T • 4.4GHz',
     priceUSD: 118,
-    image: '/products/ryzen-5600.svg',
+    image: assetPath('products/ryzen-5600.svg'),
     inStock: true,
   },
   {
@@ -68,7 +69,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Intel',
     specs: 'LGA1700 • 6C/12T • 4.4GHz',
     priceUSD: 109,
-    image: '/products/i5-12400f.svg',
+    image: assetPath('products/i5-12400f.svg'),
     inStock: false,
   },
   {
@@ -78,7 +79,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Kingston',
     specs: 'M.2 NVMe 1TB • 3500MB/s',
     priceUSD: 58,
-    image: '/products/kingston-nv2-1tb.svg',
+    image: assetPath('products/kingston-nv2-1tb.svg'),
     inStock: true,
   },
   {
@@ -88,7 +89,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Corsair',
     specs: 'DDR4 2x8GB • 3200MHz CL16',
     priceUSD: 39,
-    image: '/products/corsair-16gb.svg',
+    image: assetPath('products/corsair-16gb.svg'),
     inStock: true,
   },
   {
@@ -98,7 +99,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Gigabyte',
     specs: '12GB GDDR6 • 2 Vent.',
     priceUSD: 289,
-    image: '/products/rtx-3060.svg',
+    image: assetPath('products/rtx-3060.svg'),
     inStock: true,
   },
   {
@@ -108,7 +109,7 @@ export const PRODUCTS: Product[] = [
     brand: 'ASUS',
     specs: '24" IPS • 165Hz • 1ms',
     priceUSD: 139,
-    image: '/products/asus-24-165hz.svg',
+    image: assetPath('products/asus-24-165hz.svg'),
     inStock: true,
   },
   {
@@ -118,7 +119,7 @@ export const PRODUCTS: Product[] = [
     brand: 'HP',
     specs: 'CE285A • ~1600 págs',
     priceUSD: 72,
-    image: '/products/hp-85a.svg',
+    image: assetPath('products/hp-85a.svg'),
     inStock: true,
   },
   {
@@ -128,7 +129,7 @@ export const PRODUCTS: Product[] = [
     brand: 'ARCTIC',
     specs: '4g • 8.5 W/mK',
     priceUSD: 9,
-    image: '/products/arctic-mx4.svg',
+    image: assetPath('products/arctic-mx4.svg'),
     inStock: true,
   },
 ];

@@ -24,7 +24,7 @@ corepack enable pnpm          # o:  npm install -g pnpm
 # 2. Instalar dependencias del proyecto
 pnpm install
 
-# 3. Desarrollo — http://localhost:3000
+# 3. Desarrollo — http://localhost:3000/suministropc/  (usa el `base` de GitHub Pages)
 pnpm dev
 
 # 4. Build de producción (dist/ estático, listo para Netlify/Vercel/Cloudflare)
@@ -33,6 +33,13 @@ pnpm build
 # 5. Previsualizar el build de producción en local
 pnpm preview
 ```
+
+## Deploy
+
+Público en GitHub Pages: **https://leonelalej.github.io/suministropc/**
+
+Cada push a `main` dispara `.github/workflows/deploy.yml` (build + publish).
+Al mover a un dominio propio: ajustar `site` y `base: '/'` en `astro.config.mjs`.
 
 ## Estructura
 
