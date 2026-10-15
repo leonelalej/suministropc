@@ -45,7 +45,7 @@ export const STORE = {
 } as const;
 
 /** USD → Bs. reference rate. Update daily before opening orders. */
-export const USD_TO_VES = 999;
+export const USD_TO_VES = 999.99;
 
 /**
  * Catalog — 8 realistic hardware & supply items.
